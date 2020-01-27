@@ -6,6 +6,8 @@ Se implmento docker, se usa la imagen microsoft/dotnet:2.2-aspnetcore-runtime, e
 
 Se integro docker compose, para integrar el app con sql server
 
+Se desplego el proyecto en azure con el servicio container instance
+
 # WCF
 Se implemento un proyecto WCF para exponer los servicios
 
@@ -16,7 +18,7 @@ La base de dstos es SQL Server, la cual esta alojada en un servicio Azure
 Actualmente el proyecto esta usando la conexion a base de datos Azure, si desea iniciarlo con una base de dartos en docker, utilize docker compose
 
 # Deploy Azure
-Para visualizar el proyecto ingresar : http://netcoreangulardemo.westus2.azurecontainer.io/
+Para visualizar el proyecto  en produccion ingresar : http://netcoreangulardemo.westus2.azurecontainer.io/
 
 
 # Intrucciones
