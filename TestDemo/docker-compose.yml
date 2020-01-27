@@ -1,0 +1,35 @@
+version: '3.4'
+
+networks:
+  mydockerapi-dev:
+    driver: bridge 
+
+services:
+  mydockerapi:
+    image: testdemoimage1:latest
+    depends_on:
+      - "sql_image"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"     
+    environment:
+      DatabaseServer: "db"
+      DatabaseName: "mydb"
+      DatabaseUser: "sa"
+      DatabaseUserPassword: "Yukon900"
+    networks:
+      - mydockerapi-dev
+  
+  sql_image:
+    image: mcr.microsoft.com/mssql/server
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Yukon900"
+      ACCEPT_EULA: "Y"
+    networks:
+      - mydockerapi-dev
+
+
